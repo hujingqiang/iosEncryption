@@ -13,6 +13,8 @@
 		F07ACFA71F091B320003C317 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07ACFA51F091B320003C317 /* Main.storyboard */; };
 		F07ACFA91F091B320003C317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F07ACFA81F091B320003C317 /* Assets.xcassets */; };
 		F07ACFAC1F091B320003C317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07ACFAA1F091B320003C317 /* LaunchScreen.storyboard */; };
+		F07ACFB81F0929580003C317 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = F07ACFB41F0929580003C317 /* NSData+Base64.m */; };
+		F07ACFB91F0929580003C317 /* CryptLib.m in Sources */ = {isa = PBXBuildFile; fileRef = F07ACFB71F0929580003C317 /* CryptLib.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,11 @@
 		F07ACFA81F091B320003C317 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F07ACFAB1F091B320003C317 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F07ACFAD1F091B320003C317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F07ACFB31F0929570003C317 /* encryption_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "encryption_ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		F07ACFB41F0929580003C317 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		F07ACFB51F0929580003C317 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		F07ACFB61F0929580003C317 /* CryptLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptLib.h; sourceTree = "<group>"; };
+		F07ACFB71F0929580003C317 /* CryptLib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptLib.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,10 @@
 		F07ACF9E1F091B320003C317 /* encryption_ios */ = {
 			isa = PBXGroup;
 			children = (
+				F07ACFB41F0929580003C317 /* NSData+Base64.m */,
+				F07ACFB51F0929580003C317 /* NSData+Base64.h */,
+				F07ACFB61F0929580003C317 /* CryptLib.h */,
+				F07ACFB71F0929580003C317 /* CryptLib.m */,
 				F07ACF9F1F091B320003C317 /* AppDelegate.swift */,
 				F07ACFA11F091B320003C317 /* FirstViewController.swift */,
 				F07ACFA31F091B320003C317 /* SecondViewController.swift */,
@@ -63,6 +74,7 @@
 				F07ACFA81F091B320003C317 /* Assets.xcassets */,
 				F07ACFAA1F091B320003C317 /* LaunchScreen.storyboard */,
 				F07ACFAD1F091B320003C317 /* Info.plist */,
+				F07ACFB31F0929570003C317 /* encryption_ios-Bridging-Header.h */,
 			);
 			path = encryption_ios;
 			sourceTree = "<group>";
@@ -100,6 +112,7 @@
 					F07ACF9B1F091B320003C317 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 47Y44AZ7SE;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -141,7 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F07ACFA41F091B320003C317 /* SecondViewController.swift in Sources */,
+				F07ACFB81F0929580003C317 /* NSData+Base64.m in Sources */,
 				F07ACFA01F091B320003C317 /* AppDelegate.swift in Sources */,
+				F07ACFB91F0929580003C317 /* CryptLib.m in Sources */,
 				F07ACFA21F091B320003C317 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,11 +282,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 47Y44AZ7SE;
 				INFOPLIST_FILE = encryption_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.keepbalance.encryption-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "encryption_ios/encryption_ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -280,11 +298,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 47Y44AZ7SE;
 				INFOPLIST_FILE = encryption_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.keepbalance.encryption-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "encryption_ios/encryption_ios-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

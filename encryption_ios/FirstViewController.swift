@@ -22,7 +22,7 @@ class FirstViewController: UIViewController {
         // ((cryptoLib.generateRandomIV(11) as NSData).base64Encoding(withLineLength: 0) as NSString).substring(to: 16)
         
         print("key:\(key)")
-        print("iv:\(iv)")
+        print("i v:\(iv)")
         let encryptedData=cryptoLib.encrypt(plainText.data(using: .utf8), key: key as String!, iv: iv)
         //print("encryptedString:\(String(describing: NSString(data: encryptedString!, encoding: String.Encoding.utf8.rawValue)))")
         print("encrypted string:\((encryptedData! as NSData).base64Encoding(withLineLength: 0)!)")
